@@ -34,3 +34,10 @@ Route::post('store_tambah', [\App\Http\Controllers\BelajarController::class, 'st
 Route::post('store_kurang', [\App\Http\Controllers\BelajarController::class, 'storeKurang'])->name('store_kurang');
 Route::post('store_bagi', [\App\Http\Controllers\BelajarController::class, 'storeBagi'])->name('store_bagi');
 Route::post('store_kali', [\App\Http\Controllers\BelajarController::class, 'storeKali'])->name('store_kali');
+
+
+Route::get("guestinformation", [\App\Http\Controllers\GuestController::class, "index"]);
+Route::get("create/guestinformation", [\App\Http\Controllers\GuestController::class, "create"]);
+Route::post("store/guestinformation", [\App\Http\Controllers\GuestController::class, "store"])->name('guest.store');
+Route::get("edit/guestinformation/{id}", [\App\Http\Controllers\GuestController::class, "edit"])->name('guest.edit');
+Route::post("edit/guestinformation", [\App\Http\Controllers\GuestController::class, "update"])->name('guest.update');
