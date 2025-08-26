@@ -96,6 +96,13 @@
       </li><!-- End Guest Information Page Nav -->
 
       <li class="nav-item">
+        <a class="nav-link collapsed" href="{{ route('reservation.index') }}">
+          <i class="bi bi-calendar"></i>
+          <span>Reservasi</span>
+        </a>
+      </li><!-- End Guest Information Page Nav -->
+
+      <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-journal-text"></i><span>Forms</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>

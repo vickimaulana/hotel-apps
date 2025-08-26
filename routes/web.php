@@ -19,8 +19,9 @@ Route::resource('dashboard', \App\Http\Controllers\DashboardController::class);
 Route::resource('user', \App\Http\Controllers\UserController::class);
 Route::resource('categories', \App\Http\Controllers\CategoriesController::class);
 Route::resource('room', \App\Http\Controllers\RoomController::class);
+Route::resource('reservation', \App\Http\Controllers\RevertaionsController::class);
 
-
+Route::get('get-room-by-category/{id}', [\App\Http\Controllers\RevertaionsController::class, 'getRoomByCategory'])->name('get-room-by-category');
 // Route::get('belajar', function(){
 //     return "<h1>Selamat Datang di Larave</h1>";});
 
@@ -41,3 +42,5 @@ Route::get("create/guestinformation", [\App\Http\Controllers\GuestController::cl
 Route::post("store/guestinformation", [\App\Http\Controllers\GuestController::class, "store"])->name('guest.store');
 Route::get("edit/guestinformation/{id}", [\App\Http\Controllers\GuestController::class, "edit"])->name('guest.edit');
 Route::post("edit/guestinformation", [\App\Http\Controllers\GuestController::class, "update"])->name('guest.update');
+
+

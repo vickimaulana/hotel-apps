@@ -13,9 +13,8 @@
                     @endforeach
                 </div>
                 <h3 class="card-title">{{$title ?? ''}}</h3>
-                <form action="{{ route('guest.update', $guest->id) }}" method="post">
+                <form action="{{ route('guest.update', $guest->id) }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    @method('PUT')
                     <div class="mb-3">
                         <label for="" class="form-label">Nama Tamu *</label>
                         <input type="text" class="form-control" name="nama_tamu" placeholder="Nama Tamu" value="{{ $guest->nama_tamu  }}">
