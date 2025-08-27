@@ -34,11 +34,11 @@
                                         <br>
                                         Email   : {{ $data->guest_email }}
                                         <br>
-                                        Tlp     : {{ $data->phone }}
+                                        Tlp     : {{ $data->guest_phone }}
                                     </small>
                                 </td>
-                                <td>{{$data->guest_checkin}}</td>
-                                <td>{{$data->guest_checkout}}</td>
+                                <td>{{$data->guest_check_in}}</td>
+                                <td>{{$data->guest_check_out}}</td>
                                 <td>{{$data->isReserve}}</td>
                                 <td>
                                     <a href="{{ route('reservation.edit', $data->id) }}" class="btn btn-success">Edit</a>
