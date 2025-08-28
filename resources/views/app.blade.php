@@ -173,7 +173,8 @@
         chekcInINput.addEventListener('change', calculateTotal);
         chekcOutINput.addEventListener('change', calculateTotal);
 
-        document.getElementById('save').addEventListener('click',async function(){
+        document.getElementById('save').addEventListener('click',async function(e){
+            e.preventDefault();
         const guest_name = document.querySelector('input[name="guest_name"]').value;
         const guest_email = document.querySelector('input[name="guest_email"]').value;
         const guest_phone = document.querySelector('input[name="guest_phone"]').value;
@@ -189,7 +190,7 @@
         const tax = document.querySelector('#taxVal').value;
         const totalAmount = document.querySelector('#totalAmountVal').value;
         const token = document.querySelector("meta[name='csrf-token']").getAttribute('content')
-        const reservation_number = "RSV-270893-001";
+        const reservation_number = document.querySelector('input[name="reservation_number"]').value;
         const data ={
             reservation_number: reservation_number,
             guest_name: guest_name,
@@ -222,7 +223,9 @@
             }); //get
             const result = await res.json();
             if(res.ok){
-                alert('Success');
+                setTimeout(() => {
+                    window.location.href="/reservation"
+               }, 3000); //3 detik
             }
         } catch (error) {
             console.log("error", error);

@@ -9,6 +9,11 @@
                 <form action="{{ route('reservation.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
+                        <div class="col-md-12">
+                            <label for="" class="form-label">No Revervasi</label>
+                                <input type="text" class="form-control" name="reservation_number"
+                                    placeholder="Masukkan No Revervasi" value="{{ $reservation_number ?? '' }}" readonly>
+                        </div>
                         <div class="col-lg-6">
                             <div class="mb-3">
                                 <label for="" class="form-label">Nama Tamu*</label>
@@ -88,7 +93,7 @@
                                     <div class="d-flex justify-content-between">
                                         <span>Harga Kamar (Per malam)</span>
                                         <span id="roomRate">Rp.0</span>
-                                        <input type="text" id="roomRateVal">
+                                        <input type="hidden" id="roomRateVal">
                                     </div>
                                     <div class="d-flex justify-content-between">
                                         <span>Berapa Malam</span>
@@ -97,17 +102,17 @@
                                     <div class="d-flex justify-content-between">
                                         <span>Sub Total</span>
                                         <span id="subtotal">Rp.0</span>
-                                        <input type="text" id="subTotalVal">
+                                        <input type="hidden" id="subTotalVal">
                                     </div>
                                     <div class="d-flex justify-content-between">
                                         <span>Tax (10%)</span>
                                         <span id="tax">Rp.0</span>
-                                        <input type="text" id="taxVal">
+                                        <input type="hidden" id="taxVal">
                                     </div>
                                     <div class="d-flex justify-content-between">
                                         <span>Grand Total</span>
                                         <span id="totalAmount">Rp.0</span>
-                                        <input type="text" id="totalAmountVal">
+                                        <input type="hidden" id="totalAmountVal">
 
                                     </div>
                                 </div>
@@ -127,5 +132,29 @@
             </div>
         </div>
     </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="successModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content text-center">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4 class="mb-3">Reservasi Berhasil!!</h4>
+        <p class="text-muted mb-4">
+            Nomor Reservasi : <strong id="reservationNumber">#</strong>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">
+            <i class="bi bi-print"></i> Print Confirmation
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
 @endsection
